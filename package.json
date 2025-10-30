@@ -8,11 +8,28 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "typecheck": "turbo run typecheck",
-    "format": "prettier --write ."
+    "format": "prettier --write .",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "turbo run build && changeset publish",
+    "db:up": "cd infra && docker-compose up -d",
+    "db:down": "cd infra && docker-compose stop",
+    "db:migrate": "cd apps/api && pnpm prisma migrate dev",
+    "db:seed": "cd apps/api && pnpm db:seed",
+    "db:studio": "cd apps/api && pnpm prisma:studio",
+    "clean": "rm -rf node_modules .turbo dist .next && pnpm install"
   },
   "devDependencies": {
+    "@changesets/cli": "^2.27.1",
+    "@types/bcryptjs": "^3.0.0",
+    "@types/js-cookie": "^3.0.6",
+    "@types/jsonwebtoken": "^9.0.10",
     "prettier": "^3.3.3",
     "turbo": "^2.1.1"
+  },
+  "dependencies": {
+    "bcryptjs": "^3.0.2",
+    "js-cookie": "^3.0.5",
+    "jsonwebtoken": "^9.0.2"
   }
 }
-

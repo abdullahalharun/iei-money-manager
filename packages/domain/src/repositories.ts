@@ -14,17 +14,21 @@ export interface AccountsRepository {
 
 export interface CategoriesRepository {
   list(input: TenantScopedQuery): Promise<Category[]>;
+  create(input: Omit<Category, "id">): Promise<Category>;
 }
 
 export interface TransactionsRepository {
   list(input: TenantScopedQuery & { accountId?: string }): Promise<Transaction[]>;
+  create(input: any): Promise<Transaction>;
 }
 
 export interface BudgetsRepository {
   list(input: TenantScopedQuery): Promise<Budget[]>;
+  create(input: Omit<Budget, "id">): Promise<Budget>;
 }
 
 export interface InvestmentsRepository {
   list(input: TenantScopedQuery): Promise<Investment[]>;
+  create(input: Omit<Investment, "id">): Promise<Investment>;
 }
 

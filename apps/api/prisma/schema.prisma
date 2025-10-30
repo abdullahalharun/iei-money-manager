@@ -26,6 +26,7 @@ model User {
   id        String   @id @default(cuid())
   email     String   @unique
   name      String?
+  password  String   // Hashed password
   tenantId  String
   tenant    Tenant   @relation(fields: [tenantId], references: [id])
   createdAt DateTime @default(now())
@@ -82,7 +83,7 @@ model Budget {
   tenant     Tenant   @relation(fields: [tenantId], references: [id])
   name       String
   amount     Decimal
-  period     String   // e.g., monthly, quarterly
+  period     String
   createdAt  DateTime @default(now())
   updatedAt  DateTime @updatedAt
 }

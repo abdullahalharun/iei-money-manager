@@ -42,3 +42,6 @@ export type Transaction = z.infer<typeof Transaction>;
 export type Budget = z.infer<typeof Budget>;
 export type Investment = z.infer<typeof Investment>;
 
+// Re-export repository interfaces
+export * from "./repositories";
+

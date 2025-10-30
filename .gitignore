@@ -1,9 +1,28 @@
+# Dependencies
 node_modules
+
+# Build outputs
 .turbo
-.next
 dist
-.DS_Store
+.next
+
+# Environment
 .env
 .env.*.local
+apps/*/.env
+
+# IDE
+.DS_Store
+.idea
+.vscode
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS
+Thumbs.db
+
+# pnpm
 pnpm-lock.yaml
 
